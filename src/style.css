@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'acumin-pro-condensed';
+    src: url('/font/acumin-pro-condensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
-  font-family:  system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: acumin-pro-condensed, acsystem-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

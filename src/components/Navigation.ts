@@ -73,6 +73,7 @@ export default class CustomNav extends HTMLElement {
           padding: 1% 4%;
         }
         .btn {
+          font-family: inherit;
           background: none;
           border:none;
           padding: 0;
@@ -109,6 +110,26 @@ export default class CustomNav extends HTMLElement {
         .nav-link:hover, .sub-menu-item:hover{ 
           color: gray;
         }
+        .hamburger-icon {
+          width: 30px;
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+        .line {
+          height: 2px;
+          width: 100%;
+          background-color: white;
+        }
+        .close-icon {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        .hidden {
+          display: none;
+        }
         @media only screen and (min-width: 1024px) {
           .nav-container {
             right: 0;
@@ -132,9 +153,10 @@ export default class CustomNav extends HTMLElement {
             gap: 5%;
             padding: 12px 20px; 
             font-weight: bold;
-            font-size: .7rem;
+            font-size: 1rem;
           }
           .nav-content{
+            display:block;
             position: relative;
             font-size: 1rem;
             height:fit-content;
@@ -145,8 +167,7 @@ export default class CustomNav extends HTMLElement {
             justify-content: space-between;
             align-items: center;
           }
-          .logo-img-large {
-            display:inline-block;
+          .logo-img-large { display:inline-block;
           }
           .nav-logo-menu, .sub-menu-btn .triangle-icon {
             display: none;
@@ -166,13 +187,20 @@ export default class CustomNav extends HTMLElement {
             position:absolute;
             top:75px;
             white-space: nowrap;
-            width: fit-content;
+          } 
+          .sub-menu-list-container ul {
+            padding: 0;
+          }
+          li{
+            padding: 1%;
           }
           .sub-menu-item:hover {
             background-color: #398ce1; 
             color: white;
           }
-
+          .single-column{
+            width:25vw;
+          }
           .multi-column {
             display: grid;
             column-gap: 50px;
@@ -191,16 +219,23 @@ export default class CustomNav extends HTMLElement {
           </div>
           <div class="nav-logo-menu">
             <img src="pkLogo.png" alt="logo" class="logo-img">
-            <button type="button" id="menu-btn" class="btn"> X</button>
+            <button type="button" id="menu-close-btn" class="btn"> 
+              <span class="close-icon hidden">X</span>
+              <div class="hamburger-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+            </button>
           </div>
-          <div class="nav-content"> 
+          <div class="nav-content hidden"> 
             <nav class="nav-links">
               <img src="pkLogo.png" alt="logo" class="logo-img-large">
-              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link">HOME</a>
               <div class="sub-menu-container">
 
                 <button class="sub-menu-btn btn">
-                  <span class="nav-link">About</span>
+                  <span class="nav-link">ABOUT</span>
                   <span class="triangle-icon"></span>
                 </button>
 
@@ -221,7 +256,7 @@ export default class CustomNav extends HTMLElement {
               </div>              
               <div class="sub-menu-container">
                 <button class="sub-menu-btn btn">
-                  <span class="nav-link">Attorneys</span>
+                  <span class="nav-link">ATTORNEYS</span>
                   <span class="triangle-icon"></span>
                 </button>
                 <div class="sub-menu-list-container">
@@ -238,10 +273,10 @@ export default class CustomNav extends HTMLElement {
                   </ul>
                 </div>
               </div>              
-              <a href="#" class="nav-link">Victories</a>
+              <a href="#" class="nav-link">VICTORIES</a>
               <div class="sub-menu-container">
                 <button class="sub-menu-btn btn">
-                  <span class="nav-link">Personal Injury</span>
+                  <span class="nav-link">PERSONAL INJURY</span>
                   <span class="triangle-icon"></span>
                 </button>
                 <div  class="sub-menu-list-container">
@@ -272,7 +307,7 @@ export default class CustomNav extends HTMLElement {
               </div>
               <div  class="sub-menu-container">
                 <button  class="sub-menu-btn btn">
-                   <span class="nav-link">Medical Malpractice</span>
+                   <span class="nav-link">MEDICAL MALPRACTICE</span>
                    <span class="triangle-icon"></span>
                 </button>
                 <div  class="sub-menu-list-container">
@@ -299,7 +334,7 @@ export default class CustomNav extends HTMLElement {
               </div>
              <div class="sub-menu-container">
                 <button class="sub-menu-btn btn">
-                  <span class="nav-link">Dangerous Products</span>
+                  <span class="nav-link">DANGEROUS PRODUCTS</span>
                   <span class="triangle-icon"></span>
                 </button>
                 <div class="sub-menu-list-container">
@@ -316,14 +351,24 @@ export default class CustomNav extends HTMLElement {
                 </div>
               </div>
  
-              <a href="#" class="nav-link">Videos</a>
-              <a href="#" class="nav-link">Blog</a>
-              <a href="#" class="nav-link">Disclaimer</a>
+              <a href="#" class="nav-link">VIDEOS</a>
+              <a href="#" class="nav-link">BLOG</a>
+              <a href="#" class="nav-link">DISCLAIMER</a>
             </nav>
         </div>
       </header>
     `
+    const btnMenuClose = this.querySelector("#menu-close-btn");
+    btnMenuClose?.addEventListener("click", () => {
+        const navMenu = this.querySelector(".nav-content");
+        const hamburgerIcon = this.querySelector(".hamburger-icon")
+        const closeIcon = this.querySelector(".close-icon")
+        navMenu?.classList.toggle('hidden')
+        hamburgerIcon?.classList.toggle('hidden')
+        closeIcon?.classList.toggle('hidden')
 
+    })
+    
     const subMenuButtons = this.querySelectorAll(".sub-menu-btn") 
     subMenuButtons?.forEach((btn) => {
       const submenu = btn?.closest(".sub-menu-container")?.querySelector<HTMLUListElement>(".sub-menu-list-container");
@@ -360,6 +405,8 @@ export default class CustomNav extends HTMLElement {
                   subMenuContainer.style.position = "none";
                   navContent.style.position = "relative";
 
+              }else{
+                  ul?.classList.add("single-column");
               }
               if (triangleIcon) triangleIcon.style.transform = "rotate(180deg)";
             } else if (event.type === "mouseleave") {
@@ -373,17 +420,19 @@ export default class CustomNav extends HTMLElement {
         submenu?.addEventListener("mouseenter", handleHover);
         submenu?.addEventListener("mouseleave", handleHover);
     });
-    const links = this.querySelectorAll("a")
-    console.log('links', links)
-    links.forEach(link => {
-      link.addEventListener("mouseenter", () => {
-        const openedMenu = this.querySelector('.open');
-        if(openedMenu){
-          openedMenu.classList.remove("open");
-        }
-      })
-    })
 
+    if (window.innerWidth > 1395) {
+      const links = this.querySelectorAll("a")
+      links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+          const openedMenu = this.querySelector('.open');
+          if(openedMenu){
+            openedMenu.classList.remove("open");
+          }
+        })
+      })
+    }
+    
   }
 }
 customElements.define('custom-nav', CustomNav)
