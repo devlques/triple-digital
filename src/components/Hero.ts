@@ -4,17 +4,14 @@ export default class CustomHero extends HTMLElement {
         <link rel="stylesheet" href="/styles/hero.css"/>
         <style>
           .hero-container {
-            position: relative;
             width: 100%;
             height: fit-content;
-            position: absolute;
-            top: 5%;
           }
           .hero-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: center bottom;
           }
           .img-container {
             position: relative;
@@ -32,8 +29,8 @@ export default class CustomHero extends HTMLElement {
             gap: 10px;
             align-items: center;
             place-content: center;
-            width: 15%;
-            height: 26%;
+            width: 100px;
+            height: 100px;
             background: #f6f6f6;
             opacity: 0.9;
             z-index:2;
