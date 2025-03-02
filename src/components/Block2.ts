@@ -45,6 +45,7 @@ export default class Block2 extends HTMLElement {
           align-items: center;
           gap: 20px;
          }
+
         .box {
           width: 85%;
           height: auto;
@@ -56,8 +57,15 @@ export default class Block2 extends HTMLElement {
           padding: 5%;
           background: transparent;
           transition: background 0.5s ease-in;
+          transform:  translateY(10%);
+          transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+          opacity: 0;
         }
-        .box-icon, .box-icon-2 {
+        .box.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .x-icon, .box-icon-2 {
           width: 50px;
           aspect-ratio: 1/1;
           transition: filter 0.5s ease-in;
@@ -78,10 +86,33 @@ export default class Block2 extends HTMLElement {
           transition: background 0.3s ease-in;
           margin: auto;
         }
+        .cta-content {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+        }
+        .right-arrow {
+          transform: translateX(0%);
+          width: 20px;
+          opacity: 0;
+          filter: invert(0);
+          transition: 
+            opacity 0.3s ease-in , 
+            filter 0.3s ease-in , 
+            transform 0.3s ease-in;
+        }
         .box-cta:hover {
           background: black;
           color: white;
+          width: fit-content;
         }
+        .box-cta:hover .right-arrow {
+          opacity: 1;
+          filter: invert(1);
+          transform: translateX(30%);
+        }
+
         .box:hover {
             background: white;
          }
@@ -161,7 +192,12 @@ export default class Block2 extends HTMLElement {
     If  you or a loved one has been severely injured by another party, we can help you get the care and justice you’re owed. Everything from medical care and lost wages to recovering due compensation for your pain and suffering.
                 </p>
               </div>
-              <button class="box-cta"> VIEW ALL CASE TYPES</button>
+              <button class="box-cta"> 
+                <div class="cta-content">
+                  <span>VIEW ALL CASE TYPES</span>
+                  <img src="/right-arrow.svg" class="right-arrow" alt="right-arrow"/>
+               </div>
+              </button>
             </div>
             <div class="box">
               <img src="/icon2.svg" alt="icon 1" class="box-icon"//>
@@ -171,7 +207,11 @@ export default class Block2 extends HTMLElement {
     Medical and other healthcare negligence cases are among the most complex types of cases. If you have a serious medical malpractice case, you need our expertise.
                 </p>
               </div>
-              <button class="box-cta"> VIEW ALL CASE TYPES</button>
+              <button class="box-cta"> 
+                <div class="cta-content">
+                  <span>VIEW ALL CASE TYPES</span>
+                  <img src="/right-arrow.svg" class="right-arrow" alt="right-arrow"/>
+               </div> 
             </div>
             <div class="box">
               <img src="/icon3.svg" alt="icon 1" class="box-icon-2"//>
@@ -181,7 +221,12 @@ export default class Block2 extends HTMLElement {
     When motor vehicle accidents result in serious injuries, fatalities, or other adverse consequences due to collisions and individuals being hit or injured, we step into the arena to hold the responsible parties accountable.
                 </p>
               </div>
-              <button class="box-cta"> VIEW ALL CASE TYPES</button>
+              <button class="box-cta"> 
+                <div class="cta-content">
+                  <span>VIEW ALL CASE TYPES</span>
+                  <img src="/right-arrow.svg" class="right-arrow" alt="right-arrow"/>
+               </div>
+              </button> 
             </div>
             <div class="box">
               <img src="/icon4.svg" alt="icon 1" class="box-icon"/>
@@ -191,12 +236,43 @@ export default class Block2 extends HTMLElement {
     We represent consumers harmed by unsafe or defective drugs, pesticides, machinery, medical devices, and other dangerous products.
                 </p>
               </div>
-              <button class="box-cta"> VIEW ALL CASE TYPES</button>
+              <button class="box-cta"> 
+                <div class="cta-content">
+                  <span>VIEW ALL CASE TYPES</span>
+                  <img src="/right-arrow.svg" class="right-arrow" alt="right-arrow"/>
+               </div> 
             </div>
          </div>
        </div>
       </div>
-    `
+    `;
+    this.addScrollAnimation();
+  }
+
+  addScrollAnimation() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          const boxes = this.querySelectorAll(".box") 
+          if (entry.isIntersecting) {
+            const allBoxesHidden = [...boxes].every(box => !box.classList.contains("fade-in"));
+            if(allBoxesHidden){
+               setTimeout(() => {
+                boxes.forEach((box, i) => {
+                  setTimeout(() => box.classList.add("fade-in"), i * 1000); 
+                });
+              }, 100); 
+            }
+          }else{
+            boxes.forEach((box) => {
+              box.classList.remove("fade-in"); 
+            });
+          }
+        },
+      );
+    }, { threshold: 0.2 });
+
+    const contentBlock = this.querySelector(".block-2-content-container") as HTMLElement;
+    observer.observe(contentBlock)
   }
 }
 
