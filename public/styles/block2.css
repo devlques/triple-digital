@@ -83,7 +83,7 @@
  }
 
 .box-cta {
-  padding: 3%;
+  padding: 2% 4%;
   font-size: 1rem;
   background: transparent;
   border: 2px solid black;
@@ -102,12 +102,13 @@
 }
 .right-arrow {
   transform: translateX(0%);
-  width: 20px;
+  width: 0px;
   opacity: 0;
   filter: invert(0);
   transition: 
     opacity 0.3s ease-in , 
     filter 0.3s ease-in , 
+    width 0.3s ease-in , 
     transform 0.3s ease-in;
 }
 .box-cta:hover {
@@ -119,6 +120,7 @@
   opacity: 1;
   filter: invert(1);
   transform: translateX(30%);
+  width: 20px;
 }
 
 .box:hover {
