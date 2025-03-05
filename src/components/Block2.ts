@@ -6,7 +6,7 @@ export default class Block2 extends HTMLElement {
   position: relative;
   width: 100%;
   min-height: 100vh; 
-  background: url('/heroBlock2bg.avif') center/cover no-repeat; 
+  background: url('heroBlock2bg.avif') center/cover no-repeat; 
 }
 
 .block-2-img {
@@ -187,7 +187,7 @@ export default class Block2 extends HTMLElement {
 }
       </style>
       <div class="block-2-container">
-        <img src="/heroBlock2bg.avif" class="block-2-img" alt="dark bg image"/>
+        <img src="heroBlock2bg.avif" class="block-2-img" alt="dark bg image"/>
         <div class="block-2-content-container">
           <div class="block-2-titles-container">
             <div class="block-2-title-label">
@@ -199,7 +199,7 @@ export default class Block2 extends HTMLElement {
           </div>
           <div class="boxes-container">
             <div class="box">
-              <img src="/icon1.svg" alt="icon 1" class="box-icon"//>
+              <img src="icon1.svg" alt="icon 1" class="box-icon"//>
               <h3>PERSONAL INJURY</h3>
               <div class="box-content">
                 <p>
@@ -214,7 +214,7 @@ export default class Block2 extends HTMLElement {
               </button>
             </div>
             <div class="box">
-              <img src="/icon2.svg" alt="icon 1" class="box-icon"//>
+              <img src="icon2.svg" alt="icon 1" class="box-icon"//>
               <h3>MEDICAL MALPRACTICE</h3>
               <div class="box-content">
                 <p>
@@ -228,7 +228,7 @@ export default class Block2 extends HTMLElement {
                </div> 
             </div>
             <div class="box">
-              <img src="/icon3.svg" alt="icon 1" class="box-icon-2"//>
+              <img src="icon3.svg" alt="icon 1" class="box-icon-2"//>
               <h3>MOTOR VEHICLE ACCIDENTS</h3>
               <div class="box-content">
                 <p>
@@ -243,7 +243,7 @@ export default class Block2 extends HTMLElement {
               </button> 
             </div>
             <div class="box">
-              <img src="/icon4.svg" alt="icon 1" class="box-icon"/>
+              <img src="icon4.svg" alt="icon 1" class="box-icon"/>
               <h3>DANGEROUS PRODUCTS</h3>
               <div class="box-content">
                 <p>

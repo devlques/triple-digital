@@ -13,7 +13,7 @@ export default class Block4 extends HTMLElement {
               height: 100vh;
               background: 
                 linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-                url('/group.jpg') top/cover no-repeat;
+                url('group.jpg') top/cover no-repeat;
               transition: all 1s ease-in-out,
               grid-template-columns: 1fr; 
             } 

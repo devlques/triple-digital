@@ -133,11 +133,11 @@ mask-image:
                 Based in Houston and serving clients nationwide, Perdue & Kidd is widely regarded and recognized as one of the most competent injury law firms in the country. The firm’s distinguished track record includes multiple eight-figure jury verdicts and a reputation for winning complex, high-stakes cases.
               </p>
               <div class="logos">
-                <img src="/logq1.avif" alt="logo1"/> 
-                <img src="/logo2.avif" alt="logo2"/> 
-                <img src="/logo3.avif" alt="logo3"/> 
-                <img src="/logo4.avif" alt="logo4"/> 
-                <img src="/logo5.avif" alt="logo5"/> 
+                <img src="logq1.avif" alt="logo1"/> 
+                <img src="logo2.avif" alt="logo2"/> 
+                <img src="logo3.avif" alt="logo3"/> 
+                <img src="logo4.avif" alt="logo4"/> 
+                <img src="logo5.avif" alt="logo5"/> 
               </div>
             </div>
           </div>

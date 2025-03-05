@@ -522,7 +522,7 @@ ul li {
         </style>
         <div class="hero-container">
           <div class="img-container">
-            <img src="/hero.avif" alt="2 lawyers in suits" class="hero-img"/>
+            <img src="hero.avif" alt="2 lawyers in suits" class="hero-img"/>
             <div class=content-text-container>
               <div class="content-text">
                  <h2> 
@@ -680,11 +680,11 @@ mask-image:
                 Based in Houston and serving clients nationwide, Perdue & Kidd is widely regarded and recognized as one of the most competent injury law firms in the country. The firm’s distinguished track record includes multiple eight-figure jury verdicts and a reputation for winning complex, high-stakes cases.
               </p>
               <div class="logos">
-                <img src="/logq1.avif" alt="logo1"/> 
-                <img src="/logo2.avif" alt="logo2"/> 
-                <img src="/logo3.avif" alt="logo3"/> 
-                <img src="/logo4.avif" alt="logo4"/> 
-                <img src="/logo5.avif" alt="logo5"/> 
+                <img src="logq1.avif" alt="logo1"/> 
+                <img src="logo2.avif" alt="logo2"/> 
+                <img src="logo3.avif" alt="logo3"/> 
+                <img src="logo4.avif" alt="logo4"/> 
+                <img src="logo5.avif" alt="logo5"/> 
               </div>
             </div>
           </div>
@@ -696,7 +696,7 @@ mask-image:
   position: relative;
   width: 100%;
   min-height: 100vh; 
-  background: url('/heroBlock2bg.avif') center/cover no-repeat; 
+  background: url('heroBlock2bg.avif') center/cover no-repeat; 
 }
 
 .block-2-img {
@@ -877,7 +877,7 @@ mask-image:
 }
       </style>
       <div class="block-2-container">
-        <img src="/heroBlock2bg.avif" class="block-2-img" alt="dark bg image"/>
+        <img src="heroBlock2bg.avif" class="block-2-img" alt="dark bg image"/>
         <div class="block-2-content-container">
           <div class="block-2-titles-container">
             <div class="block-2-title-label">
@@ -889,7 +889,7 @@ mask-image:
           </div>
           <div class="boxes-container">
             <div class="box">
-              <img src="/icon1.svg" alt="icon 1" class="box-icon"//>
+              <img src="icon1.svg" alt="icon 1" class="box-icon"//>
               <h3>PERSONAL INJURY</h3>
               <div class="box-content">
                 <p>
@@ -904,7 +904,7 @@ mask-image:
               </button>
             </div>
             <div class="box">
-              <img src="/icon2.svg" alt="icon 1" class="box-icon"//>
+              <img src="icon2.svg" alt="icon 1" class="box-icon"//>
               <h3>MEDICAL MALPRACTICE</h3>
               <div class="box-content">
                 <p>
@@ -918,7 +918,7 @@ mask-image:
                </div> 
             </div>
             <div class="box">
-              <img src="/icon3.svg" alt="icon 1" class="box-icon-2"//>
+              <img src="icon3.svg" alt="icon 1" class="box-icon-2"//>
               <h3>MOTOR VEHICLE ACCIDENTS</h3>
               <div class="box-content">
                 <p>
@@ -933,7 +933,7 @@ mask-image:
               </button> 
             </div>
             <div class="box">
-              <img src="/icon4.svg" alt="icon 1" class="box-icon"/>
+              <img src="icon4.svg" alt="icon 1" class="box-icon"/>
               <h3>DANGEROUS PRODUCTS</h3>
               <div class="box-content">
                 <p>
@@ -955,7 +955,7 @@ mask-image:
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url('/heroBlock3bg.avif') center/cover no-repeat; 
+  background: url('heroBlock3bg.avif') center/cover no-repeat; 
 }
 .block-3-content-container {
   position:relative;
@@ -1122,10 +1122,10 @@ mask-image:
             </div>
             <div class="slider-btns">
               <button id="prev-btn" class="slider-btn">
-                <img src="/left-arrow.svg"/>
+                <img src="left-arrow.svg"/>
               </button>
               <button id="next-btn" class="slider-btn">
-                <img src="/right-arrow.svg"/>
+                <img src="right-arrow.svg"/>
               </button>
             </div>
           </div>
@@ -1285,7 +1285,7 @@ mask-image:
               height: 100vh;
               background: 
                 linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-                url('/group.jpg') top/cover no-repeat;
+                url('group.jpg') top/cover no-repeat;
               transition: all 1s ease-in-out,
               grid-template-columns: 1fr; 
             } 

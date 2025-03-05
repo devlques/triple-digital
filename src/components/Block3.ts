@@ -6,7 +6,7 @@ export default class Block3 extends HTMLElement {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url('/heroBlock3bg.avif') center/cover no-repeat; 
+  background: url('heroBlock3bg.avif') center/cover no-repeat; 
 }
 .block-3-content-container {
   position:relative;
@@ -173,10 +173,10 @@ export default class Block3 extends HTMLElement {
             </div>
             <div class="slider-btns">
               <button id="prev-btn" class="slider-btn">
-                <img src="/left-arrow.svg"/>
+                <img src="left-arrow.svg"/>
               </button>
               <button id="next-btn" class="slider-btn">
-                <img src="/right-arrow.svg"/>
+                <img src="right-arrow.svg"/>
               </button>
             </div>
           </div>

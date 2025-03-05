@@ -145,7 +145,7 @@ export default class CustomHero extends HTMLElement {
         </style>
         <div class="hero-container">
           <div class="img-container">
-            <img src="/hero.avif" alt="2 lawyers in suits" class="hero-img"/>
+            <img src="hero.avif" alt="2 lawyers in suits" class="hero-img"/>
             <div class=content-text-container>
               <div class="content-text">
                  <h2> 
