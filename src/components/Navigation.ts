@@ -151,7 +151,7 @@ export default class CustomNav extends HTMLElement {
     `
 
     window.addEventListener("scroll", () => {
-      const nav = this.querySelector(".nav-container");
+      const nav = this.querySelector(".nav-container") as HTMLElement;
       if (window.scrollY > 100) {
         nav.style.background = "#081126";
       } else {
@@ -171,7 +171,7 @@ export default class CustomNav extends HTMLElement {
     
     const subMenuButtons = this.querySelectorAll(".sub-menu-btn") 
     subMenuButtons?.forEach((btn) => {
-      const submenu = btn?.closest(".sub-menu-container")?.querySelector<HTMLUListElement>(".sub-menu-list-container");
+      const submenu = btn?.closest(".sub-menu-container")?.querySelector<HTMLUListElement>(".sub-menu-list-container") as HTMLElement;
       const triangleIcon = btn.querySelector(".triangle-icon") as HTMLElement;
 
       btn.addEventListener("click", () => {
@@ -195,10 +195,11 @@ export default class CustomNav extends HTMLElement {
 
               if( liLenght > 9){
                   const columns = Math.ceil(liLenght / 8); // Determine number of columns (N)
-                  const navContent = this.querySelector<HTMLElement>(".nav-content")
-                  const subMenuContainer = this.querySelector<HTMLElement>(".sub-menu-container")
+                  const navContent = this.querySelector<HTMLElement>(".nav-content") as HTMLElement;
+                  const subMenuContainer = this.querySelector<HTMLElement>(".sub-menu-container") as HTMLElement;
                   ul?.classList.add("multi-column");
-                  if(ul){
+                  if(ul !== null){
+                  //@ts-ignore
                    ul.style.gridTemplateColumns = `repeat(${columns}, minmax(150px, 1fr))`;  
                   }
                   submenu.style.left = "0";
