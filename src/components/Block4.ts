@@ -254,14 +254,16 @@ export default class Block4 extends HTMLElement {
       const observeAnimation = () => {
         const container = this. querySelector(".block-4-container") as HTMLElement;
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if(entry.isIntersecting){
+          setTimeout(() => {
+            entries.forEach(entry => {
+              if(entry.isIntersecting){
               container.classList.add("active");
-            }else {
+              }else {
               container.classList.remove("active");
-            }
-          }) 
-        }, {threshold: 0.95});
+              }
+             }) 
+          }, 1000)
+        }, {threshold: 0.75});
         observer.observe(container)
       }
       updateContent('perdue')
