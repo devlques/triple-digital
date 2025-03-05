@@ -1,7 +1,6 @@
 export default class CustomHero extends HTMLElement {
     connectedCallback(){
       this.innerHTML = `
-        <link rel="stylesheet" href="/styles/hero.css"/>
         <style>
           .hero-container {
             width: 100%;

@@ -1,7 +1,238 @@
 export default class CustomNav extends HTMLElement {
   connectedCallback(){
     this.innerHTML = `
-      <link rel="stylesheet" href="/styles/navigation.css"/>
+      <style>
+        
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: fit-content;
+  background: #081126;
+  opacity: 0.95;
+  gap: 30px;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-info-bar{
+  display: none;
+}
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1%;
+  color: white;
+  width: 95%;
+  background: #081126;
+  opacity: 0.95;
+  height: 100vh;
+}
+.nav-logo-large {
+  display: none;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  font-weight: bold;
+  background: #081126;
+  opacity: 0.95;
+}
+.sub-menu-container {
+  display:flex;
+  flex-direction: column;
+}
+.sub-menu-btn span{
+  font-size: 1rem;
+  font-weight: bold;
+}
+.sub-menu-btn:hove: {
+  cursor: pointer;
+}
+.nav-logo-menu {
+}
+.nav-logo-menu, .sub-menu-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+.sub-menu-list-container {
+  display:none; 
+  text-align: left;
+  background: #081126;
+  opacity: 0.9;
+}
+.open {
+  display:block
+}
+.sub-menu-list-container ul {
+  display:hidden;
+  padding-left: 3%;
+  list-style: none;
+}
+ul li {
+  margin: 5px 0
+}
+.nav-logo-menu {
+  padding: 1% 4%;
+}
+.btn {
+  font-family: inherit;
+  background: none;
+  border:none;
+  padding: 0;
+}
+.logo-img, .logo-img-large {
+  height: 45px;
+  width: 60px;
+  background-color: white;
+}
+.logo-img-large {
+  display:none;
+}
+#menu-btn{
+  font-size: 1.5em;
+}
+.triangle-icon {
+  display: inline-block;
+  vertical-align: middle; 
+  width: 0;
+  height: 0;
+  border-top: 8px solid white;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.triangle-icon:hover {
+  border-top: 10px solid gray;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+.nav-link:hover, .sub-menu-item:hover{ 
+  color: gray;
+}
+.hamburger-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+.close-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 1395px) {
+  .nav-container {
+    width:100%;
+    left:0;
+    gap: 0;
+    height: fit-content;
+    background: transparent;
+    opacity: 1;
+  }
+  .nav-info-bar{
+    background: #1f417e;
+    opacity: 1;
+    display: flex;
+    justify-content: end; 
+    color: white;
+    gap: 5%;
+    padding: 12px 20px; 
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .nav-content{
+    width:auto;
+    display:block;
+    position: relative;
+    font-size: 1rem;
+    height:fit-content;
+    background: transparent;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+  }
+  .logo-img-large { 
+    display:inline-block;
+  }
+  .nav-logo-menu, .sub-menu-btn .triangle-icon {
+    display: none;
+  }
+  .nav-logo-large {
+    display: inline;
+  }
+  .nav-link:hover{
+    color: white;
+  }
+  .nav-link::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease-in-out;
+  }
+
+  .nav-link:hover::after {
+    width: 100%; 
+  }
+
+  .sub-menu-list-container {
+    position:absolute;
+    top:75px;
+    white-space: nowrap;
+  } 
+  .sub-menu-list-container ul {
+    padding: 0;
+  }
+  li{
+    padding: 1%;
+  }
+  .sub-menu-item:hover {
+    background-color: #398ce1; 
+    color: white;
+  }
+  .single-column{
+    width:25vw;
+  }
+  .multi-column {
+    justify-content: center;
+    display: grid;
+    column-gap: 50px;
+    gap: 5px;
+    width: 100vw;
+  }
+  .multi-column > .sub-menu-item {
+    padding-left: 100px;
+  }
+}
+      </style>
       <header class="nav-container">
           <div class="nav-info-bar">
             <div>REFERRING ATTORNEYS</div>    
