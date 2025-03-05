@@ -94,6 +94,10 @@ export default class CustomHero extends HTMLElement {
           }
           
           @media only screen and (min-width: 800px) {
+            .hero-container{
+              z-index: 10;
+              margin-top: -100px;
+            }
             .content-text-container {
               background:transparent;
             }

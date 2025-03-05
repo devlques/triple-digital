@@ -8,6 +8,7 @@ export default class CustomNav extends HTMLElement {
             <div>CONTACT US</div>    
             <div>800-520-1749</div>    
           </div>
+
           <div class="nav-logo-menu">
             <img src="pkLogo.png" alt="logo" class="logo-img">
             <button type="button" id="menu-close-btn" class="btn"> 
@@ -74,8 +75,7 @@ export default class CustomNav extends HTMLElement {
                   <ul>
                     <li class="sub-menu-item">Overview</li>
                     <li class="sub-menu-item">Car Accidents</li>
-                    <li class="sub-menu-item">Rideshare Accidents</li>
-                    <li class="sub-menu-item">Distracted Driving</li>
+                    <li class="sub-menu-item">Rideshare Accidents</li> <li class="sub-menu-item">Distracted Driving</li>
                     <li class="sub-menu-item">Oil Field Injuries</li>
                     <li class="sub-menu-item">Commercial Vehicle Accidents</li>
                     <li class="sub-menu-item">Motorcycle Accidents</li>
@@ -149,6 +149,15 @@ export default class CustomNav extends HTMLElement {
         </div>
       </header>
     `
+
+    window.addEventListener("scroll", () => {
+      const nav = this.querySelector(".nav-container");
+      if (window.scrollY > 100) {
+        nav.style.background = "#081126";
+      } else {
+        nav.style.background = "transparent"; // Keep transparent at the top
+      }
+    });
     const btnMenuClose = this.querySelector("#menu-close-btn");
     btnMenuClose?.addEventListener("click", () => {
         const navMenu = this.querySelector(".nav-content");
