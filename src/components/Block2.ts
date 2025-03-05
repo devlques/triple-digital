@@ -85,18 +85,20 @@ export default class Block2 extends HTMLElement {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           const boxes = this.querySelectorAll(".box") 
-          if (entry.isIntersecting) {
-            const allBoxesHidden = [...boxes].every(box => !box.classList.contains("fade-in"));
+          boxes.forEach((box) => box.classList.remove("fade-in") );
+          const allBoxesHidden = [...boxes].every(box => !box.classList.contains("fade-in"));
+          if (entry.isIntersecting && allBoxesHidden) {
             if(allBoxesHidden){
                setTimeout(() => {
                 boxes.forEach((box, i) => {
-                  setTimeout(() => box.classList.add("fade-in"), i * 1000); 
+                  let counter = i;
+                  setTimeout(() => box.classList.add("fade-in"), counter * 1000); 
                 });
               }, 100); 
             }
           }else{
             boxes.forEach((box) => {
-              box.classList.remove("fade-in"); 
+              setTimeout(() => box.classList.remove("fade-in"),10); 
             });
           }
         },

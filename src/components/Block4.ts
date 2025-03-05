@@ -256,9 +256,9 @@ export default class Block4 extends HTMLElement {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if(entry.isIntersecting){
-              setTimeout(() => container.classList.add("active"), 1000);
+              setTimeout(() => container.classList.add("active"), 2000);
             }else {
-              setTimeout(() => container.classList.remove("active"), 4000);
+              setTimeout(() => container.classList.remove("active"), 500);
             }
           }) 
         }, {threshold: 0.75});
