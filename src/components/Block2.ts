@@ -228,7 +228,7 @@ export default class Block2 extends HTMLElement {
                </div> 
             </div>
             <div class="box">
-              <img src="icon3.svg" alt="icon 1" class="box-icon-2"//>
+              <img src="icon3.svg" alt="web icon 1" class="box-icon-2"//>
               <h3>MOTOR VEHICLE ACCIDENTS</h3>
               <div class="box-content">
                 <p>
