@@ -7,14 +7,14 @@ export default class CustomHero extends HTMLElement {
             width: 100%;
             height: fit-content;
           }
+          .img-container {
+            position: relative;
+          }
           .hero-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center bottom;
-          }
-          .img-container {
-            position: relative;
           }
           .img-container::before {
             content: "";
@@ -61,9 +61,14 @@ export default class CustomHero extends HTMLElement {
              display: flex;
              flex-direction: column;
              align-items: end;
-             justify-content: flex-end;
+             justify-content: flex-end;  
 
              background: transparent;
+             .h2-2 {
+               font-family: Helvetica;
+               font-weight: bold;
+               font-size: 5rem;
+             }
            }
 
           .content-text, .content-text-sm {
@@ -101,13 +106,39 @@ export default class CustomHero extends HTMLElement {
             .content-text-container {
               background:transparent;
             }
-
-            .content-text {
-              display: block;
+            .content-text-sm {
+              display: none;
             }
 
-           .content-text-sm {
-              display: none;
+            @keyframes zoom-out {
+              from {
+                transform: scale(1.2)
+              }
+              to {
+                transform: scale(1)
+              }
+            }
+            .hero-container img {
+              animation: zoom-out 1s ease-in-out;
+            }
+            .video-box {
+              width: 15%;
+              height: 20%;
+            }
+
+            @keyframes slide-up {
+              from {
+                 opacity: 0;
+                 transform: translateY(10%); 
+              }
+              to {
+                 opacity: 1;
+                 transform: translateY(0); 
+              }
+            }
+            .content-text {
+              display: block;
+              animation: slide-up 1s ease-in-out;
             }
 
           }
